@@ -1,0 +1,30 @@
+# There are bascally 4 popular Face Emotion Recognition:
+
+1.Deep Face
+2.PyTorch
+3.Tensor Flow
+4.MATLAB
+
+# Project Flow:
+
+1.Brainstroming
+    1.Concepts
+    2.Datasets
+    3.Transfer Learning
+    
+2.Instalation  
+
+3.Code Implimentation
+ 
+
+
+# We can implemment this in both ways:
+
+1.Classification: Giving the model the camera access so that it can determine the persons emotions. Hence we input a image and get one optiion from the bucket in this case the emotions
+
+2.Regression: Giving real time continuos data that would changes.For example using the brain waves to find the inetensity of exact emotional spectrum. Hence we input some analog singnals and in the output we get the floating point number in this case this determines the emotinal intensity
+
+Since classification is the easy one to enter into deep learning coming from an Maching learning background it would be better option to pick
+
+# Datasets
+     

@@ -4,9 +4,9 @@
 2.PyTorch
 3.Tensor Flow
 4.MATLAB
-
+  
 # Project Flow:
-
+        
 1.Brainstroming
     1.Concepts
     2.Datasets
@@ -15,6 +15,7 @@
 2.Instalation  
 
 3.Code Implimentation
+What we did was first of all  
  
 
 
@@ -26,5 +27,7 @@
 
 Since classification is the easy one to enter into deep learning coming from an Maching learning background it would be better option to pick
 
-# Datasets
-     
+ 
+ 
+We will use transfer learning method in whichhe pre trained models that are famous and they do most of our work apparently too.
+

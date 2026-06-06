@@ -11,7 +11,7 @@
     1.Concepts
     2.Datasets
     3.Transfer Learning
-    
+
 2.Instalation  
 
 3.Code Implimentation
@@ -28,6 +28,14 @@ What we did was first of all
 Since classification is the easy one to enter into deep learning coming from an Maching learning background it would be better option to pick
 
  
- 
 We will use transfer learning method in whichhe pre trained models that are famous and they do most of our work apparently too.
 
+We have successfully built the data pipeline. This includes:
+- Establishing a secure virtual environment (.venv) with isolated dependencies.
+- We have implimented the data input function that reads, resizes (224x224), and labels our 3,000+ image dataset.
+- Also we are shuffling the dataset to ensure model generalization and preventing overfitting.
+
+# Future Vision: Affective Computing
+The end goal is to evolve this V1 classifier into a real-time digital wellness dashboard. By monitoring facial micro-expressions in the background, we aim to provide users with data-driven insights into their weekly emotional trends, helping them identify peak productivity hours and emotional burnout triggers—all while maintaining a strict 'privacy-first' local-processing architecture.
+  
+  

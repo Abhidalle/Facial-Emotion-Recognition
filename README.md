@@ -8,6 +8,3 @@ https://www.kaggle.com/datasets/msambare/fer2013?select=test
 # AI Declaration 
 So far to find out about this data i used perplexity for research purposes.
 
-
-
-

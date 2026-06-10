@@ -13,7 +13,7 @@ st.write("Check the box below for turning your webcam on")
 def load_my_brain():
     return load_model("best_model.h5")
 
-emotion_model = load_my_brain()
+emotion_model = load_my_brain() 
 emotion_labelings = ["Anger", "Disgust", "Fear", "Happy","Neutral", "Sad", "Surprise"]
 
 #This is only used to find teh faces and it was that same pre trained model i was taking about from Open CV
@@ -35,7 +35,7 @@ if run_camera:
             break
 
         #Make the images of gray color (SINCE WE TRAINED ON B&W IMAGES) so the model can find it easily 
-        gray = cv2.cvtCOlor(frame, cv2.COLOR_BGR2GRAY)
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
         #Find the faces by ignoring the backgrounds
         faces = faceCascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=6, minSize=(120,120))
@@ -47,3 +47,22 @@ if run_camera:
             face_crop = frame[y:y+h, x:x+w]
             face_crop = cv2.resize(face_crop, (224, 224))
             face_crop = cv2.cvtColor(face_crop, cv2.COLOR_BGR2RGB)
+
+            #Normalize the numbers now
+            face_crop = face_crop.astype('float32') / 255.0
+            face_crop = np.expand_dims(face_crop, axis=0)
+
+            # Get the prediction from the AI
+            prediction = emotion_model.predict(face_crop,  verbose=0)
+            max_index = int(np.argmax(prediction))
+            final_emotion = emotion_labelings[max_index]
+
+            #Put the text right above teh green box as well trh emotioan indicator
+            cv2.putText(frame, final_emotion, (x,y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0,255,0), 2)
+
+        # WE shall flip the colors so we dont look blue
+        frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        video_placeholder.image(frame_rgb)
+
+    #FINALLY Clean up the camera after uncheking the box
+    cap.release()

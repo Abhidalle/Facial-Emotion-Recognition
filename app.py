@@ -28,8 +28,10 @@ else:
         final_image = cv2.resize(backtorgb, (224, 224))
         final_image = np.expand_dims(final_image, axis=0)
         
+    
+
         # we have to normalize it as well 
         final_image = final_image/255.0
         predictions = new_model.predict(final_image) 
         print(predictions[0])
- 
+        

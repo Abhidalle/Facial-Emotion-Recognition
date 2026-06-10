@@ -27,12 +27,19 @@ video_placeholder = st.image([])
  
 if run_camera:
     cap = cv2.VideoCapture(0)
+    #Add tehse variables so that we can make it lag free(Only taking into account what we see in the 5 frames as 1)
+    frame_count = 0
+    skip_frames = 5
+    final_emotion = "Scanning..."
     
     while run_camera:
         ret, frame = cap.read()
         if not ret:
             st.write("Camera does not seem to be working")
             break
+        #Just add this for Zero to slighty mininal lag
+
+        frame_count += 1
 
         #Make the images of gray color (SINCE WE TRAINED ON B&W IMAGES) so the model can find it easily 
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -42,24 +49,24 @@ if run_camera:
 
         for (x,y,w,h) in faces:
             cv2.rectangle(frame,(x,y), (x+w, y+h), (0,255,0), 2)
+            if frame_count % skip_frames == 0:
+                 # Crop the face and then finally reize them as well
+                face_crop = frame[y:y+h, x:x+w]
+                face_crop = cv2.resize(face_crop, (224, 224))
+                face_crop = cv2.cvtColor(face_crop, cv2.COLOR_BGR2RGB)
 
-            # Crop the face and then finally reize them as well
-            face_crop = frame[y:y+h, x:x+w]
-            face_crop = cv2.resize(face_crop, (224, 224))
-            face_crop = cv2.cvtColor(face_crop, cv2.COLOR_BGR2RGB)
+                #Normalize the numbers now
+                face_crop = face_crop.astype('float32') / 255.0
+                face_crop = np.expand_dims(face_crop, axis=0)
 
-            #Normalize the numbers now
-            face_crop = face_crop.astype('float32') / 255.0
-            face_crop = np.expand_dims(face_crop, axis=0)
-
-            # Get the prediction from the AI
-            prediction = emotion_model.predict(face_crop,  verbose=0)
-            max_index = int(np.argmax(prediction))
-            final_emotion = emotion_labelings[max_index]
+                # Get the prediction from the AI
+                prediction = emotion_model.predict(face_crop,  verbose=0)
+                max_index = int(np.argmax(prediction))
+                final_emotion = emotion_labelings[max_index]
 
             #Put the text right above teh green box as well trh emotioan indicator
             cv2.putText(frame, final_emotion, (x,y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0,255,0), 2)
-
+ 
         # WE shall flip the colors so we dont look blue
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         video_placeholder.image(frame_rgb)

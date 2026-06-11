@@ -1,1 +1,8 @@
 # Neural Network is one of the most popular machine learning algorithims in Machine Learning 
+
+What i found during the middle of my work was that my machine doenst have enough RAM to locally run this model at all. Hence i pivoted to the COlab one 
+BUTTTTT
+What actually happend was our colab saved it at the maximum verison and it was not supported by streamlit so we used the .kereas verison instead
+
+At the end it did work and we fixated on the model with like 65% accuracy even tho it did reach 92% one time. 
+WHY may you ask sometimes butt even if you know nothing about data science you can just take it like the model legit like memorized all of the images one by one insted of using Deep Learning so i had to pick the one with the least amount of the loss function and validation accuracy

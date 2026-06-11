@@ -1,8 +1,10 @@
 # Facial Emotion Recognition CNN
-This is my first model that would tell the emotions based on a live feed
+This is my first model that would tell the emotions based on a live feed from your computer 
 
 # Datasets
-We are using the FER 2013 dataset from kaggle you can install it from:
+We are using the FER 2013 dataset from kaggle you can install it from kaggle. Even tho it has been said to be very notoriously cluttered and not very clear. I have bee able to get about 60% accuracy (For context the best so far in this dataset is about 78%0)
+
+The link below is the dataset link in kaggle:
 https://www.kaggle.com/datasets/msambare/fer2013?select=test
 
 # Resources
@@ -11,7 +13,16 @@ In order to save huge amounds of time i have used this pre trained model the goo
 Also the aarcascade_frontalface_default.xml file you see in the gitignore file is the ML modle that was trained specifically to idnetify face from the whole wide camera and trained by OpenCV. It has been imported from this git hub link given below:
 https://github.com/kipr/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml
 
+
+I had to switch from VS code to Colab for training the model on the T4 GPU. My intel core mac wasnt able to handle all the epoches at all hence i used the Gooogle Colab on this and ran on the cloud.
+
+
 # AI Declaration 
 1. So far to find out about this data i used perplexity for research purposes.
-
+   
 2. To be honest since this project is my official shift from building basic machine learning models to this Convulation Nural Network one i used AI for some codes in a few sections of this ipynb files and then used CLAUDE for debugging purposes of this as well.
+
+
+## Note
+If you have any questions regarding this and how i built this i have the whole 'learning logs' folder for this purpose with .txt files acting as like a guide for you.
+   

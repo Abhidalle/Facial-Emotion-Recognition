@@ -7,6 +7,7 @@ env/
 
 haarcascade_frontalface_default.xml
 
-best_model.h5
+best_model_v2.keras
 
 trial.jpeg
+

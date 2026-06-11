@@ -24,5 +24,14 @@ I had to switch from VS code to Colab for training the model on the T4 GPU. My i
 
 
 ## Note
+
+We provide two deployment versions because WebRTC facilitates low-latency, continuous streaming (high complexity/fragile dependencies), whereas camera_input ensures cross-platform platform stability (native browser-processing/zero system dependencies) for guaranteed uptime during live demos.
+
 If you have any questions regarding this and how i built this i have the whole 'learning logs' folder for this purpose with .txt files acting as like a guide for you.
+
+## DEMO
+This is the photo only mode demo in the live website
+<img width="1280" height="800" alt="Screen Shot 2026-06-11 at 23 23 25" src="https://github.com/user-attachments/assets/aa6cc016-fdcf-4618-9277-94e64043386b" />
+
+
    

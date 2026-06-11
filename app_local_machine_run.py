@@ -14,7 +14,6 @@ def patched_dense_init(self, *args, **kwargs):
     kwargs.pop('quantization_config', None)  # Deletes the Colab keyword
     original_dense_init(self, *args, **kwargs)
 Dense.__init__ = patched_dense_init
-
 # Add the basic stufs first
 st.set_page_config(page_title="Emotion Detector AI", layout="centered")
 
@@ -37,8 +36,6 @@ with st.sidebar:
     st.markdown("""
     I wanted to quit only building my regular AI systems that were either text based or data based. It is my first project i built using the Deep Learning. This project started as a raw 39% accurate model. After completely re training the neural network, balancing the dataset mathematically by using the balanced function, and fighting through some massive library version conflicts, My first CNN Project was born. 
     """)
-
-
 
     st.markdown("---")
 

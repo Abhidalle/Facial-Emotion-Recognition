@@ -30,8 +30,22 @@ We provide two deployment versions because WebRTC facilitates low-latency, conti
 If you have any questions regarding this and how i built this i have the whole 'learning logs' folder for this purpose with .txt files acting as like a guide for you.
 
 ## DEMO
-This is the photo only mode demo in the live website
+The demo for the live tracking is the local server:
+
+https://github.com/user-attachments/assets/59a4aab1-9bc0-472b-b3f3-395e3d593117
+
+
+This is the photo only mode demo in the live website:
 <img width="1280" height="800" alt="Screen Shot 2026-06-11 at 23 23 25" src="https://github.com/user-attachments/assets/aa6cc016-fdcf-4618-9277-94e64043386b" />
+
+<img width="1280" height="800" alt="Screen Shot 2026-06-11 at 23 29 31" src="https://github.com/user-attachments/assets/ad02aebc-de8c-4375-a528-7265110b1179" />
+
+<img width="1280" height="800" alt="Screen Shot 2026-06-11 at 23 28 37" src="https://github.com/user-attachments/assets/deb33c4c-6364-4968-af43-81ec02b8170d" />
+
+<img width="1280" height="800" alt="Screen Shot 2026-06-11 at 23 27 56" src="https://github.com/user-attachments/assets/354f55b2-f419-4459-b4b5-9924cf7a4254" />
+
+<img width="1280" height="800" alt="Screen Shot 2026-06-11 at 23 27 34" src="https://github.com/user-attachments/assets/67e5ffae-772e-40e4-9788-737386d34a83" />
+
 
 
    
